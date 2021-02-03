@@ -25,7 +25,8 @@ function createDivWithText(text) {
    prepend(document.querySelector('#one'), document.querySelector('#two')) // добавит элемент переданный первым аргументом в начало элемента переданного вторым аргументом
  */
 function prepend(what, where) {
-  where.insertBefore(what, where.firstElementChild);
+  //where.insertBefore(what, where.firstElementChild);
+  where.prepend(what);
 }
 
 /*
@@ -165,7 +166,7 @@ function collectDOMStat(root) {
       if (child.nodeType === Node.TEXT_NODE) {
         stat.texts++;
       } else if (child.nodeType === Node.ELEMENT_NODE) {
-        if (child.tag.name in stat.tags) {
+        if (child.tagName in stat.tags) {
           stat.tags[child.tagName]++;
         } else {
           stat.tags[child.tagName] = 1;
@@ -227,7 +228,7 @@ function observeChildNodes(where, fn) {
         fn({
           type: mutation.addedNodes.length ? 'insert' : 'remove',
           nodes: [
-            ...(mutation.addedNodes.length ? mutation.addedNodes : mutation.removeNodes),
+            ...(mutation.addedNodes.length ? mutation.addedNodes : mutation.removedNodes),
           ],
         });
       }

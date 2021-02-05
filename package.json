@@ -1,7 +1,7 @@
 {
   "name": "loftschool-example",
   "version": "1.0.0",
-  "description": "",
+  "description": "Универсальная сборка для выполнения домашних заданий на курсе по Javascript",
   "main": "index.js",
   "scripts": {
     "codestyle": "eslint projects",
@@ -55,5 +55,13 @@
   },
   "devDependencies": {
     "cross-env": "^7.0.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikix-it/ermilov-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nikix-it/ermilov-js/issues"
+  },
+  "homepage": "https://github.com/nikix-it/ermilov-js#readme"
 }
